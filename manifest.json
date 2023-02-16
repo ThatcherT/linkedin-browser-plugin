@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "no-likey",
+  "version": "0.1",
+  "description": "Hide posts liked by others on LinkedIn.",
+
+  "icons": {
+    "16": "img/no-likey-16.png",
+    "32": "img/no-likey-32.png",
+    "48": "img/no-likey-48.png",
+    "128": "img/no-likey-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["no-likey.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "service_worker": "sw-likey.js"
+  },
+  "permissions": ["webRequest"],
+
+  "host_permissions": ["https://*.linkedin.com/*"]
+}
