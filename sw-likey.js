@@ -2,7 +2,7 @@
 // the service worker doesn't seem to log anything...? Needs to execute hidey func
 // shipping anyways
 
-console.log(chrome, 'CHROMECHROMECHROME')
+console.log(chrome, "CHROMECHROMECHROME");
 
 chrome.webRequest.onBeforeRequest.addListener(
   /**
@@ -13,7 +13,7 @@ chrome.webRequest.onBeforeRequest.addListener(
    * @returns {void}
    */
   function (details) {
-    console.log('function received', details)
+    console.log("function received", details);
     if (
       details.method === "POST" &&
       details.url === "https://www.linkedin.com/li/track"
